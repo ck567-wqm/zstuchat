@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wqm.mapper.FriendMapper">
+
+    <select id="selectMyFriend" resultType="com.wqm.common.vo.MyFriendVo">
+        select a.username, a.avatar,a.signature,b.time from user a inner join friend b on a.id = b.uid2 and b.uid1 = #{id} order by b.time desc
+    </select>
+
+</mapper>

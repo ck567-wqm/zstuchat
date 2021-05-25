@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wqm.mapper.MessageMapper">
+
+    <select id="selectMyMessage" resultType="com.wqm.common.vo.MyMessageVo">
+        select a.username, a.avatar,b.message,b.time from user a inner join message b on a.id = b.uid1 and b.uid2 = #{id} order by b.time desc
+    </select>
+
+</mapper>
